@@ -1,0 +1,7 @@
+*.Rproj.user
+*.Rhistory
+*.RData
+*.Ruserdata
+*.Rmd
+Intro_to_TropFishR.pdf
+Intro_to_TropFishR.Rmd
