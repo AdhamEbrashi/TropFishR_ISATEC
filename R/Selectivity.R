@@ -55,6 +55,8 @@ plot(res, regression_fit = FALSE)
 
 # Catch Curve with selectivity ####
 
+dev.off()
+
 lfq_list3 <- readRDS("lfq_list3.rds")
 
 res <- catchCurve(lfq_list3, catch_columns = 1:8, calc_ogive = TRUE, reg_int = c(12,32))
@@ -65,6 +67,7 @@ res <- catchCurve(lfq_list3, catch_columns = 1:8, calc_ogive = TRUE, reg_int = c
 res$L50
 res$L75
 
+dev.off()
 
 # assign values to lfq_list 
 lfq_list3$L50 <- res$L50

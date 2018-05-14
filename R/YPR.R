@@ -26,7 +26,7 @@ dat2 <- list(FM = 1.5,  # fishing mortality
              tr = 0.2,  # age at recruitment (to fishery)
              K = 1.99,  # growth coefficient
              t0 = 0.15, # theoretical age at length zero
-             Winf = 50) # asymptotic weigth in [g]
+             Winf = 50) # asymptotic weight in [g]
 
 
 # model can be run with 'predict_mod'
@@ -68,7 +68,7 @@ res <- predict_mod(param = lfq_list5,
 # only looks at FM changes to give YPR values
 
 
-# now look at different mes sizes
+# now look at different mesh sizes
 res <- predict_mod(param = lfq_list5,
                    type = "ThompBell",
                    FM_change = seq(0,2.5,0.1), Lc_change = seq(5,40,0.1),
@@ -84,7 +84,7 @@ res <- predict_mod(param = lfq_list5,
 
 
 
-## Schaefer and Fox model- bruilibrium production model####
+## Schaefer and Fox model- equilibrium production model####
 # create data
 # Y - yield
 # f - effort

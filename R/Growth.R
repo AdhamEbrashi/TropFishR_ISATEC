@@ -19,6 +19,10 @@
 # devtools::install_github("tokami/TropFishR")
 require(TropFishR)
 
+# working directory
+getwd()
+# setwd()
+
 
 #' Generating length-at-age data
 set.seed(1) # makes data reproducible
@@ -101,7 +105,7 @@ dat <- list(L1 = c(40,46,29,30,18,31,48,49,59,58,61,65,57,55),
 # Munro ####
 res <- growth_tagging(param = dat, method = "Munro", time_unit = "day", Linf_range=c(80,120))
 # method: Munro
-# Linf_range: lower and upper limits of range --> optimise searches for Linf value with best fit (lowest CV value)
+# Linf_range: lower and upper limits of range --> optimize searches for Linf value with best fit (lowest CV value)
 # time_unit: time interval (year, month, week, day)
 
 # mean of individual K values
@@ -194,7 +198,7 @@ ga_res <- ELEFAN_GA(x = lfq_list,
 
 # maxiter: maximum number of iterations to run before GA search is halted (should increase, usually 100 - takes a while)
 
-ga_res$par$Linf; sa_res$par$K
+ga_res$par$Linf; ga_res$par$K
 
 plot(ga_res)
 
@@ -203,6 +207,6 @@ plot(ga_res)
 
 
 # save data for Mortality Rscript
-lfq_list2 <- c(lfq_list, sa_res$par, list(agemax = sa_res$agemax))
+lfq_list2 <- c(lfq_list, ga_res$par, list(agemax = ga_res$agemax))
 getwd()
 saveRDS(lfq_list2, file = "lfq_list2.rds")
